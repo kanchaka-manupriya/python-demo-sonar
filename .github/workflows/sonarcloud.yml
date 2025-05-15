@@ -13,8 +13,8 @@ jobs:
         uses: SonarSource/sonarcloud-github-action@v2
         with:
           args: >
-            -Dsonar.projectKey=your_github_username_your_repo
-            -Dsonar.organization=your_sonarcloud_org
+            -Dsonar.projectKey=python-demo-sonar
+            -Dsonar.organization=kanchaka-manupriya
             -Dsonar.python.version=3.10
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
