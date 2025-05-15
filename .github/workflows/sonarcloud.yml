@@ -1,0 +1,23 @@
+name: "Python sonar cloud scan demo"
+on:
+  workflow_dispatch:
+
+jobs:
+  DemoSonarCloudScan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@v2
+        with:
+          args: >
+            -Dsonar.projectKey=your_github_username_your_repo
+            -Dsonar.organization=your_sonarcloud_org
+            -Dsonar.python.version=3.10
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
+
+
